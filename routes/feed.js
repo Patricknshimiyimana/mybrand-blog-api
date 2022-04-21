@@ -50,7 +50,10 @@ router.delete('/post/:postId', adminAuth, feedController.deletePost)
 // COMMENT ROUTES
 
 // POST /post/:postId/comment
-router.post('/post/:postId/comment', isAuth, feedController.createComment);
+router.post('/post/:postId/comment', isAuth,
+    body('username').trim().not().isEmpty(),
+    body('comment').trim().not().isEmpty(), 
+    feedController.createComment);
 
 // GET comments
 router.get('/post/:postId/comments', isAuth, feedController.getComments);

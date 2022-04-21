@@ -10,8 +10,11 @@ const router = express.Router();
 router.get('/messages', adminAuth, queryController.getQueries);
 
 // POST /feed/post
-router.post(
-  '/message', queryController.createQuery);
+router.post('/message',
+  body('username').trim().not().isEmpty(),
+  body('email').isEmail().withMessage('Please enter a valid email'),
+  body('message').trim().not().isEmpty(),
+  queryController.createQuery);
 
 // DELETE
 router.delete('/message/:queryId', adminAuth, queryController.deleteQuery)

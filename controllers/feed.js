@@ -180,7 +180,7 @@ exports.deletePost = (req, res, next) => {
 exports.createComment = async(req, res, next) => {
   const comment = await new Comment({
   _id: new mongoose.Types.ObjectId(),
-  name: req.body.name,
+  username: req.body.username,
   comment: req.body.comment
 });
 
