@@ -21,9 +21,23 @@ router.put('/signup', [
 
         body('password').trim().isLength({ min: 5 }),
         body('username').trim().not().isEmpty()
-], authController.signup) 
+], 
+ /*  #swagger.tags = ['Auth']
+    	#swagger.parameters['obj'] = {
+            in: 'body',
+            required: true,
+            schema: { $ref: "#/definitions/SignupModel" }
+    } */
+    authController.signup) 
 
-router.post('/login', authController.login)
+router.post('/login', 
+ /*  #swagger.tags = ['Auth']
+    	#swagger.parameters['obj'] = {
+            in: 'body',
+            required: true,
+            schema: { $ref: "#/definitions/LoginModel" }
+    } */
+    authController.login)
 
 const registerAdmin = (req, res, next) => {
     

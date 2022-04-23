@@ -5,10 +5,12 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const multer = require('multer');
 const dotenv = require('dotenv');
+const swaggerUi = require("swagger-ui-express");
 
 const feedRoutes = require('./routes/feed');
 const authRoutes = require('./routes/auth');
 const queryRoutes = require('./routes/query');
+const swaggerFile = require("./swagger_output.json");
 
 dotenv.config();
 
@@ -51,6 +53,7 @@ app.use((req, res, next) => {
 app.use('/feed', feedRoutes);
 app.use('/auth', authRoutes);
 app.use('/query', queryRoutes);
+app.use("/doc", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.use((error, req, res, next) => {
   console.log(error);
