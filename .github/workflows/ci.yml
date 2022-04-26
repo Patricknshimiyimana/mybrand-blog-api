@@ -1,0 +1,12 @@
+name: Testing workflow
+on: push
+
+jobs:
+  test_api:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+       run:
+         npm install
+         npm test
