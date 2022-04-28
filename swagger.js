@@ -6,7 +6,7 @@ const doc = {
         title: "Patrick nsh. (mybrand and blog) API",
         description: "Node.js api for my personal brand website and blog <b>Patrick nsh.</b>"
     },
-    host: "https://mybrand-blog-api.herokuapp.com",
+    host: "localhost:3000",
     basePath: "/",
     schemes: ["http", "https"],
     consumes: ["application/json"],
