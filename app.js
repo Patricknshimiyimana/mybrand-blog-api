@@ -7,6 +7,7 @@ const multer = require('multer');
 const dotenv = require('dotenv');
 const helmet = require('helmet');
 const swaggerUi = require("swagger-ui-express");
+const cors = require('cors');
 
 const feedRoutes = require('./routes/feed');
 const authRoutes = require('./routes/auth');
@@ -33,7 +34,7 @@ const upload = multer({
   storage: storage,
 });
 
-
+app.use(cors());
 app.use(helmet());
 
 // app.use(bodyParser.urlencoded()); // x-www-form-urlencoded <form>
