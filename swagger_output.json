@@ -25,6 +25,13 @@
     "http",
     "https"
   ],
+ 
+  "cors": {
+    "in":"header",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT, PATCH, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type, api_key, Authorization"
+  },
   "securityDefinitions": {
     "Authorization": {
       "type": "apiKey",
