@@ -30,8 +30,8 @@ exports.createPost = (req, res, next) => {
     error.statusCode = 422;
     throw error;
   }
-  if (!req.file) {
-    const error = new Error('No image provided.');
+  if (!req.body.image) {
+    const error = new Error('No image url provided.');
     error.statusCode = 422;
     throw error;
   }
