@@ -47,6 +47,7 @@ const doc = {
         PostModel: {
             $title: "lorem ipsum dol enum",
             $content: "lorem ipsum dol enumlorem ipsum dol enum",
+            $image: "url"
         },
         
         CommentModel: {

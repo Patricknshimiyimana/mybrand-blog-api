@@ -30,7 +30,7 @@ router.post(
         #swagger.parameters['image'] = {
             in: 'formData',
             required: true,
-            type: 'file'
+            type: 'string'
         }
       
       #swagger.parameters['title'] = {
@@ -73,7 +73,7 @@ router.put(
         #swagger.parameters['image'] = {
             in: 'formData',
             required: true,
-            type: 'file'
+            type: 'string'
         }
       
       #swagger.parameters['title'] = {
